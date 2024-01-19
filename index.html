@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            background-color: rgba(37, 101, 180, 0);
+            position: relative;
+        }
+        .contact{
+            height: auto;
+            margin: 3vh;
+            line-height: 20px;
+            position: relative;
+            left: -30px;
+        }
+        .contact h2{
+            padding: 0;
+            margin: 0;
+        }
+        .wrapper {
+            padding: 2vh;
+            height: 170px;
+            position: relative;
+            display: flex;
+            gap: 2px;
+            rotate: 180deg;
+            border-radius: 15px;
+            background-color: rgba(104, 134, 232, 0.14);
+            box-shadow: 2px 10px 25px rgba(56, 89, 143, 0.433),
+            2px 5px 10px rgba(56, 89, 143, 0.433) inset;
+            backdrop-filter: blur(25px);
+        }
+        button {
+            margin: 20px 10px;
+            height: 33px;
+            width: 70px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 18px;
+            border: 1px solid black;
+            position: relative;
+            background-color: transparent;
+            overflow: hidden;
+            box-shadow: 2px 10px 25px rgba(56, 89, 143, 0.433),
+            2px 5px 10px rgba(56, 89, 143, 0.433);
+            backdrop-filter: blur(25px);
+            
+        }
+        button:hover{
+            color: white;
+        }
+        button::after{
+            content: "";
+            position: absolute;
+            top: 105%;
+            left: -7%;
+            height: 40px;
+            width: 80px;
+            background-color: black;
+            transition: all 0.4s;
+        }
+        button:hover::after{
+            top: -1%;
+            mix-blend-mode: color;
+        }
+
+        
+
+        .wrapper div:nth-child(1) {
+            background-color: rgba(217, 0, 255, 0.693);
+            animation-duration: 3s;
+        }
+
+        .wrapper div:nth-child(2) {
+            background-color: rgb(0, 255, 183);
+            animation-duration: 1.9s;
+        }
+
+        .wrapper div:nth-child(3) {
+            background-color: rgba(0, 26, 255, 0.738);
+            animation-duration: 2.5s;
+        }
+
+        .wrapper div:nth-child(4) {
+            background-color: rgba(255, 251, 0, 0.904);
+            animation-duration: 3.5s;
+        }
+        .wrapper div {
+            width: 70px;
+            height: auto;
+            border-radius: 6px;
+            background-color: aqua;
+            animation: animate linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                height: 120px;
+            }
+
+            10% {
+                height: 50px;
+            }
+
+            20% {
+                height: 80px;
+            }
+
+            30% {
+                height: 70px;
+            }
+
+            40% {
+                height: 100px;
+            }
+
+            50% {
+                height: 20px;
+            }
+
+            60% {
+                height: 60px;
+            }
+
+            70% {
+                height: 100px;
+            }
+
+            80% {
+                height: 40px;
+            }
+
+            90% {
+                height: 80px;
+            }
+
+            100% {
+                height: 150px;
+            }
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="contact">
+        <h2>Contact me</h2>
+        <p>
+            my portfolio website link is here: <br>
+            <a href="http://gyaneshor.com.np/" target="_blank">gyaneshor.com.np</a>
+        </p>
+    </div>
+    <div class="wrapper">
+        <div id="ele1"></div>
+        <div id="ele2"></div>
+        <div id="ele3"></div>
+        <div id="ele4"></div>
+
+
+
+
+    </div>
+    <div class="buttons">
+
+        <button onclick="startAnimation()">Start</button>
+        <button onclick="resetAnimation()">Reset</button>
+        <button onclick="stopAnimation()">Stop</button>
+    </div>
+
+    <script>
+
+        const element1 = document.getElementById('ele1');
+        const element2 = document.getElementById('ele2');
+        const element3 = document.getElementById('ele3');
+        const element4 = document.getElementById('ele4');
+
+        const divAnimation = element1.style.animation;
+
+
+
+        function startAnimation() {
+            element1.style.animationPlayState = 'running';
+            element2.style.animationPlayState = 'running';
+            element3.style.animationPlayState = 'running';
+            element4.style.animationPlayState = 'running';
+            element1.style.animation = divAnimation;
+            element2.style.animation = divAnimation;
+            element3.style.animation = divAnimation;
+            element4.style.animation = divAnimation;
+        }
+
+
+        function resetAnimation() {
+            element1.style.animation = 'none';
+            element2.style.animation = 'none';
+            element3.style.animation = 'none';
+            element4.style.animation = 'none';
+            
+            
+            
+        }
+        function stopAnimation() {
+            element1.style.animationPlayState = 'paused';
+            element2.style.animationPlayState = 'paused';
+            element3.style.animationPlayState = 'paused';
+            element4.style.animationPlayState = 'paused';
+        }
+
+    </script>
+</body>
+
+</html>
